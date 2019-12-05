@@ -10,8 +10,8 @@
 DHTesp dht;
 
 //VARIAVEIS WIFI
-const char *ssid =  "AP02";
-const char *pass =  "fabio123eu";
+const char *ssid =  "XXXXX";
+const char *pass =  "xxxx";
 IPAddress ipaddr;
 WiFiClient client;
 
