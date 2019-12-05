@@ -16,6 +16,8 @@ mysqli_query($con, 'SET character_set_results=utf8');
 function insertDb($info,$table){
     global $con;
     $count = 1;
+    $fields = "";
+    $values = "";
     foreach($info as $key=>$value){
         $fields .= $key; 
         $values .= "'".$value."'";
@@ -31,6 +33,8 @@ function insertDb($info,$table){
 //FUNCAO ATUALIZAR BANCO
 function updateDb($info,$table,$field,$id) {
     global $con;
+    $fields = "";
+    $values = "";
     $count = 1;
     $sql = "UPDATE ".$table." SET ";
     foreach($info as $key=>$value){

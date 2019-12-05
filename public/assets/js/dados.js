@@ -24,7 +24,7 @@ var myVar = setInterval(atualiza, 1000);
 
         function atualiza() {
 
-            $.getJSON("api/dados.php", function (result) {
+            $.getJSON("api/", function (result) {
                 TEMP = result.temperatura;
                 HUM = result.humidade;
                 EST = result.estacao;
