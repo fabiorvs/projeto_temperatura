@@ -95,12 +95,13 @@ void loop()
 
 //FUNCAO DE ENVIO DE DAOS A API
 void enviaDados(String TEMP, String HUM, String IP, String EST){
-  String getData, Link;
+  String postData, Link;
   HTTPClient http;
-  getData = "?temp=" + TEMP + "&hum=" + HUM + "&ip=" + IP + "&estacao=" + EST ;
-  Link = "http://192.168.1.111:8080/api/inserir.php" + getData;
+  postData = "temp=" + TEMP + "&hum=" + HUM + "&ip=" + IP + "&estacao=" + EST ;
+  Link = "http://192.168.1.111:8080/api/";
   http.begin(Link); 
-  int httpCode = http.GET();
+  http.addHeader("Content-Type", "application/x-www-form-urlencoded");
+  int httpCode = http.POST(postData);
   String payload = http.getString();
   ENV = payload.toInt();
   Serial.println(httpCode);
